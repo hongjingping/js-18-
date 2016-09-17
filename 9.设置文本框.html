@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>设置文本框</title>
+    <script>
+//        onload = function(){
+//            var inputs = document.getElementsByTagName("input");
+//            for(var i=0;i<inputs.length;i++){
+//                var input  = inputs[i];
+//                if(input.type == "text"){
+//                    input.onfocus = function(){
+//                        for(var i=0;i<inputs.length;i++){
+//                            inputs[i].style.background="";
+//                        }
+//                        this.style.background = "red";
+//                    }
+//                }
+//            }
+//        }
+
+        onload = function(){
+            var inputs = document.getElementsByTagName("input");
+            for(var i=0;i<inputs.length;i++){
+                inputs[i].onfocus = function(){
+                    for(var i=0;i<inputs.length;i++){
+                        inputs[i].style.backgroundColor="";
+                    }
+                    this.style.backgroundColor = "red";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="text"><br>
+<input type="text"><br>
+<input type="text"><br>
+<input type="text"><br>
+<input type="text"><br>
+<input type="text"><br>
+<input type="text"><br>
+<input type="text"><br>
+<input type="text">
+</body>
+</html>

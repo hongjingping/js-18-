@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        select{
+            width: 200px;
+            height: 300px;
+        }
+    </style>
+    <!--<script>-->
+        <!--onload = function(){-->
+            <!--var allRight = document.getElementById('allRight');-->
+            <!--var allLeft = document.getElementById('allLeft');-->
+            <!--var oneRight = document.getElementById('oneRight');-->
+            <!--var oneLeft = document.getElementById('oneLeft');-->
+<!--//            allRight.onclick = function(){-->
+<!--//                for(var i=0,len=leftSelect.children.length;i<len;i++){-->
+<!--//                    var option = leftSelect.children[i];-->
+<!--//                    rightSelect.appendChild(option);-->
+<!--//                    i&#45;&#45;;-->
+<!--//                }-->
+<!--//            };-->
+<!--//            allLeft.onclick = function(){-->
+<!--//                for(var i=0,len=rightSelect.children.length;i<len;i++){-->
+<!--//                    var option = rightSelect.children[i];-->
+<!--//                    leftSelect.appendChild(option);-->
+<!--//                    i&#45;&#45;;-->
+<!--//                }-->
+<!--//            };-->
+<!--//            oneRight.onclick = function(){-->
+<!--//                for(var i=0,len=leftSelect.children.length;i<len;i++){-->
+<!--//                    var option = leftSelect.children[i];-->
+<!--//                    if(option.selected){-->
+<!--//                        rightSelect.appendChild(option);-->
+<!--//                        i&#45;&#45;;-->
+<!--//                    }-->
+<!--//                }-->
+<!--//            };-->
+<!--//            oneLeft.onclick = function(){-->
+<!--//                for(var i=0,len=rightSelect.children.length;i<len;i++){-->
+<!--//                    var option = rightSelect.children[i];-->
+<!--//                    if(option.selected){-->
+<!--//                        leftSelect.appendChild(option);-->
+<!--//                        i&#45;&#45;;-->
+<!--//                    }-->
+<!--//                }-->
+<!--//            }-->
+            <!--allRight.onclick = function(){-->
+                <!--allMove('leftSelect','rightSelect');-->
+            <!--};-->
+            <!--allLeft.onclick = function(){-->
+                <!--allMove('rightSelect','leftSelect');-->
+            <!--};-->
+            <!--oneRight.onclick = function(){-->
+                <!--oneMove('leftSelect','rightSelect');-->
+            <!--};-->
+            <!--oneLeft.onclick = function(){-->
+                <!--oneMove('rightSelect','leftSelect');-->
+            <!--};-->
+
+            <!--//全部选择-->
+            <!--function allMove(src,dest){-->
+                <!--var srcElement = document.getElementById(src) ;-->
+                <!--var destElement = document.getElementById(dest) ;-->
+                <!--for(var i=0;i<srcElement.children.length;i++){-->
+                    <!--var option = srcElement.children[i];-->
+                    <!--destElement.appendChild(option);-->
+                    <!--i&#45;&#45;;-->
+                <!--}-->
+            <!--}-->
+
+            <!--//选择其中一部分-->
+            <!--function oneMove(src,dest){-->
+                <!--var srcElement = document.getElementById(src) ;-->
+                <!--var destElement = document.getElementById(dest) ;-->
+                <!--for(var i=0;i<srcElement.children.length;i++){-->
+                    <!--var option = srcElement.children[i];-->
+                    <!--if(option.selected){-->
+                        <!--destElement.appendChild(option);-->
+                        <!--i&#45;&#45;;-->
+                    <!--}-->
+                <!--}-->
+            <!--}-->
+
+        <!--}-->
+
+    <!--</script>-->
+</head>
+<body>
+<select name="左选" id="leftSelect" multiple="multiple">
+    <option value="">苹果</option>
+    <option value="">橘子</option>
+    <option value="">香蕉</option>
+    <option value="">芒果</option>
+    <option value="">番茄</option>
+</select>
+<input type="button" value=">>" id="allRight">
+<input type="button" value="<<" id="allLeft">
+<input type="button" value=">" id="oneRight">
+<input type="button" value="<" id="oneLeft">
+<select name="右选" id="rightSelect" multiple="multiple"></select>
+</body>
+<script>
+    var allRight = document.getElementById('allRight');
+    var allLeft = document.getElementById('allLeft');
+    var oneRight = document.getElementById('oneRight');
+    var oneLeft = document.getElementById('oneLeft');
+    allRight.onclick = function(){
+        allMove('leftSelect','rightSelect');
+    };
+    allLeft.onclick = function(){
+        allMove('rightSelect','leftSelect');
+    };
+    oneRight.onclick = function(){
+        oneMove('leftSelect','rightSelect');
+    };
+    oneLeft.onclick = function(){
+        oneMove('rightSelect','leftSelect');
+    };
+
+    //全部选择
+    function allMove(src,dest){
+        var srcElement = document.getElementById(src);
+        var destElement = document.getElementById(dest);
+        for(var i=0;i<srcElement.children.length;i++){
+            var option = srcElement.children[i];
+            destElement.appendChild(option);
+            i--;
+        }
+    }
+
+    //部分选择
+    function oneMove(src,dest){
+        var srcElement = document.getElementById(src);
+        var destElement = document.getElementById(dest);
+        for(var i=0;i<srcElement.children.length;i++){
+            var option = srcElement.children[i];
+            if(option.selected){
+                destElement.appendChild(option);
+                i--;
+            }
+        }
+    }
+
+</script>
+</html>

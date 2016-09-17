@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1" class="table">
+    <thead >
+        <tr>
+            <th><input type="checkbox" id="allChange"></th>
+            <th>菜名</th>
+            <th>饭店</th>
+        </tr>
+    </thead>
+    <tbody id="oneChange">
+        <tr><td><input type="checkbox"></td><td>红烧肉</td><td>牛肉</td></tr>
+        <tr><td><input type="checkbox"></td><td>红烧肉1</td><td>牛肉1</td></tr>
+        <tr><td><input type="checkbox"></td><td>红烧肉2</td><td>牛肉2</td></tr>
+        <tr><td><input type="checkbox"></td><td>红烧肉3</td><td>牛肉3</td></tr>
+    </tbody>
+</table>
+<input type="button" id="btn" value="反选">
+
+<script>
+
+//    var allChange = document.getElementById('allChange');
+//    var ongChange = document.getElementById("oneChange");
+//    var sub_boxs = ongChange.getElementsByTagName('input');
+//    var btn = document.getElementById('btn');
+//    //1.全选,总选择=子选择
+//    allChange.onclick = function(){
+//        for(var i=0;i<sub_boxs.length;i++){
+//            var sub_box = sub_boxs[i];
+//            if(sub_box.type == "checkbox"){
+//                sub_box.checked = this.checked;
+//            }
+//        }
+//    };
+//    //子选择框有一个为false，全选就为false
+//    for(var i=0;i<sub_boxs.length;i++){
+//        var sub_box = sub_boxs[i];
+//        if(sub_box.type == 'checkbox'){
+//            sub_box.onclick = function(){
+//               checked();
+//            };
+//        }
+//    }
+//
+//    function checked(){
+//        var isChecked = true;
+//        for(var i=0;i<sub_boxs.length;i++){
+//            var sub_box = sub_boxs[i];
+//            if(sub_box.type == "checkbox" && !sub_box.checked){
+//                isChecked = false;
+//            }
+//        }
+//        allChange.checked = isChecked;
+//    }
+//
+//    //反选，全部取反
+//    btn.onclick = function(){
+//        for(var i=0;i<sub_boxs.length;i++){
+//            var sub_box = sub_boxs[i];
+//            if(sub_box.type == "checkbox"){
+//                sub_box.checked = !sub_box.checked;
+//            }
+//        }
+//        checked();
+//    }
+
+    var  allChange = document.getElementById('allChange');
+    var  oneChange = document.getElementById("oneChange");
+    var inputs = oneChange.getElementsByTagName("input");
+    var btn = document.getElementById('btn');
+    //全选=子选
+    allChange.onclick = function(){
+        for(var i=0;i<inputs.length;i++){
+            if(inputs[i].type == "checkbox"){
+                inputs[i].checked = this.checked;
+            }
+        }
+    };
+
+    //子选为false，全选就为false
+    for(var i=0;i<inputs.length;i++){
+        var input = inputs[i];
+        if(input.type == "checkbox"){
+            input.onclick = function(){
+               checked();
+            }
+        }
+    }
+
+    function checked(){
+        var isChecked = true;
+        for(var i=0;i<inputs.length;i++){
+            var input = inputs[i];
+            if(input.type == "checkbox" && !input.checked){
+                isChecked = false;
+            }
+        }
+        allChange.checked = isChecked;
+    }
+
+    //btn为false，就反选
+    btn.onclick =function(){
+        for(var i=0;i<inputs.length;i++){
+            var input = inputs[i];
+            if(input.type == "checkbox"){
+                input.checked = !input.checked;
+            }
+        }
+        checked();
+    }
+</script>
+</body>
+</html>

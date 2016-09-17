@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>倒计时</title>
+    <!--<script>-->
+        <!--onload = function(){-->
+            <!--var btn = document.getElementById('btn');-->
+            <!--var num = 10;-->
+            <!--var timerId = setInterval(function(){-->
+                <!--num &#45;&#45;;-->
+                <!--btn.value = "请阅读协议("+num+")";-->
+                <!--if(num==0){-->
+                    <!--clearInterval(timerId);-->
+                    <!--btn.disabled = false;-->
+                    <!--btn.value = "同意";-->
+                <!--}-->
+            <!--},1000);-->
+        <!--}-->
+    <!--</script>-->
+</head>
+<body>
+<input type="button" value="请阅读协议(10)" disabled="disabled" id='btn'>
+</body>
+<script>
+    var btn = document.getElementById('btn');
+    var num = 10;
+    var timerId = setInterval(function(){
+        num --;
+        btn.value = "请阅读协议("+num+")";
+        if(num ==0){
+            clearInterval(timerId);
+            btn.disabled = false;
+            btn.value = "同意";
+        }
+    },1000);
+</script>
+</html>

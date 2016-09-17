@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+//        /*1.对象*/
+//        function Stuudent(name,age,gender){
+//            this.name = name;
+//            this.age = age;
+//            this.gender = gender;
+//            this.say = function(){
+//                return this.name+",我今年"+this.age+"岁，我的性别是"+this.gender;
+//            }
+//        };
+//        var hong = new Stuudent('萍宝贝',19,'女');
+//        console.log(hong.name);
+//        console.log(hong.age);
+//        console.log(hong.gender);
+//        console.log(hong.say());
+//        /*2,对象字面量*/
+//        var fang = {
+//            name:'斌宝贝',
+//            age:20,
+//            gender:'男',
+//            say:function(){
+//                return this.name+this.age+this.gender;
+//            }
+//        };
+//        console.log(fang.name);
+//        console.log(fang.age);
+//        console.log(fang.gender);
+//        console.log(fang.say());
+//
+//        /*for in 遍历数组*/
+//        for(var key in hong){
+//            console.log(key + ':' + hong[key]);
+//        }
+
+        //1.对象
+        function Student(name,age,gender){
+            this.name = name;
+            this.age = age;
+            this.gender = gender;
+            this.say = function(){
+                return this.name + ",今年"+this.age+",我是"+this.gender;
+            }
+        }
+        var hong = new Student("萍",18,"女");
+        console.log(hong.name);
+        console.log(hong.age);
+        console.log(hong.gender);
+        console.log(hong.say());
+
+        /*2.对象字面量*/
+        var fang = {
+            name:"斌",
+            age:19,
+            gender:"男",
+            say:function(){
+                return this.name+this.age+this.gender;
+            }
+        };
+        console.log(fang.name);
+        console.log(fang.age);
+        console.log(fang.gender);
+        console.log(fang.say());
+        /*3.遍历对象*/
+        for(var k in fang){
+            console.log(k+":"+fang[k]);
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

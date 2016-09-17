@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+    <script>
+        onload = function(){
+            var div = document.getElementsByTagName("div")[0];
+            var btnBig = document.getElementById("big");
+            var btnNormal = document.getElementById("normal");
+            var btnSmall = document.getElementById("small");
+            btnBig.onclick = function(){
+                div.style.width = "400px";
+                div.style.height = "400px";
+            };
+            btnNormal.onclick = function(){
+                div.style.width = "200px";
+                div.style.height = "200px";
+            };
+            btnSmall.onclick = function(){
+                div.style.width = "100px";
+                div.style.height = "100px";
+            }
+        }
+    </script>
+</head>
+<body>
+<div></div>
+<input type="button" value="变大" id="big">
+<input type="button" value="不变" id="normal">
+<input type="button" value="变小" id="small">
+</body>
+</html>

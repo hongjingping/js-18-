@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+   <!-- <script>
+        onload = function(){
+            var box = document.createElement("div");
+            document.body.appendChild(box);
+            var ul = document.createElement("ul");
+            box.appendChild(ul);
+            for(var i=0;i<10;i++){
+                var li = document.createElement("li");
+                if(i%2==0){
+                    li.style.background = "red";
+                }else{
+                    li.style.background = "blue";
+                }
+                ul.appendChild(li);
+            }
+            var lists = document.getElementsByTagName('li');
+            for(var i= 0,len=lists.length;i<len;i++){
+                var bg ;
+                lists[i].onmouseover = function(){
+                    bg = this.style.background;
+                    this.style.background = "green";
+                };
+                lists[i].onmouseout = function(){
+                    this.style.background = bg;
+                }
+            }
+        }
+    </script>-->
+</head>
+<body>
+</body>
+<script>
+    var box = document.createElement('div');
+    document.body.appendChild(box);
+    var ul = document.createElement("ul");
+    box.appendChild(ul);
+    for(var i=0;i<10;i++){
+        var li = document.createElement('li');
+        if(i%2 == 0){
+            li.style.background = "pink";
+        }else{
+            li.style.background = "skyblue";
+        }
+        ul.appendChild(li);
+    }
+    var lists = document.getElementsByTagName("li");
+    for(var i= 0,len=lists.length;i<len;i++){
+        var bg;
+        lists[i].onmouseover = function(){
+            bg = this.style.background;
+            this.style.background = "yellow";
+        };
+        lists[i].onmouseout = function(){
+            this.style.background = bg;
+        }
+    }
+</script>
+</html>

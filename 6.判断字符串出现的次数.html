@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+//        var str = "adbgsfhsaeiruqfdafkjafaffd";
+//        var o = {};
+//        for(var i=0;i<str.length;i++){
+//            //得到每一个元素
+//            var item = str.charAt(i);
+//            if(o[item]){
+//                o[item]++;
+//            }else{
+//                o[item] = 1;
+//            }
+//        }
+//        var maxCount = 0;
+//        var maxChar = '';
+//        for(var k in o){
+//            if(maxCount<o[k]){
+//                maxCount = o[k];
+//                maxChar = k;
+//            }
+//        }
+//        console.log("出现最多的字符" + maxChar);
+//        console.log('出现最多的次数' + maxCount);
+
+//        var str = "abcdefgabcdefgaaa";
+//        var o = {};
+//        for(var i=0;i<str.length;i++){
+//            var item = str.charAt(i);
+//            if(o[item]){
+//                o[item]++;
+//            }else{
+//                o[item]=1;
+//            }
+//        }
+//        var maxCount = 0;
+//        var maxChar ='';
+//        for(var key in o){
+//            if(maxCount<o[key]){
+//                maxCount = o[key];
+//                maxChar = key;
+//            }
+//        }
+//        console.log('出现最多的次数' + maxCount);
+//        console.log('出现最多次数的字符' + maxChar);
+
+
+        var str = 'qwertyuioppoiuytrppp';
+        var o = {};
+        for(var i=0;i<str.length;i++){
+            var item = str.charAt(i);
+            if(o[item]){
+                o[item]++;
+            }else{
+                o[item]=1;
+            }
+        }
+        var maxCount =0;
+        var maxChar = '';
+        for(var k in o){
+            if(maxCount<o[k]){
+                maxCount = o[k];
+                maxChar = k;
+            }
+        }
+console.log('出现最多的次数' + maxCount);
+console.log('出现最多的字符' + maxChar);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

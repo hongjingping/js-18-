@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var arr = [12,141,231,15,2,211,12,51,221,65,25,28,5,67,45,7,137,8,32,29,321,2131];
+        var arr1 = [1,2,3,4,5,6,7,8];
+        function Max(arr){
+            var max = arr[0];
+            for(var i=1;i<arr.length;i++){
+                if(max<arr[i]){
+                    max = arr[i];
+                }
+            }
+            return max;
+        }
+        console.log(Max(arr));
+        console.log(Max(arr1));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

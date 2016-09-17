@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>渐变和改变位置</title>
+    <style>
+        #box {
+            width:300px;
+            height:300px;
+            background-color:#a1d3ff;
+            position:absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+    <script>
+        onload = function(){
+            var div = document.getElementById('box');
+            document.onclick = function(){
+                animate(div,{
+                    left:400,
+                    top:300,
+                },function(){
+                    animate(div,{
+                       width:400,
+                        height:500,
+                    },function(){
+                        animate(div,{
+                            opacity:0.6
+                        })
+                    })
+                })
+            };
+            function animate(element,atts,fn){
+                //清除定时器
+                if(element.timerId){
+                    clearInterval(element.timerId);
+                }
+                //定时器
+                element.timerId = setInterval(function(){
+                    //假设定时器应该停止了
+                    var stop = true;
+                    //遍历attrs对象，获取所有的属性
+                    for(var k in attrs){
+                        //获取行间样式，对应的目标值
+                        var target = attrs[k];
+                        var current = 0;
+                        var step = 0;
+                        //判断是否要修改透明度的属性
+                        if(k === "opacity"){
+                            current = parseFloat(getStyle(element,k))*100 || 0;
+                            target = target * 100;
+                            step = (target - current)/100;
+                            step = step > 0 ? Math.ceil(step):Math.floor(step);
+                            current += step;
+                            //兼容IE
+                            element.style['filter'] = 'alpha(opacity="+current+")';
+                        }else if(k === 'zIndex'){
+                            element.style[k] = target;
+                        }else{
+                            //在上面的代码进行修改
+                            //获取任意样式的属性的值，如果转换数字失败了，返回0
+                            current = parseInt(getStyle(element,k))||0
+                            step = (target - current)/10;
+                            step = step>0?Math.ceil(step):Math.floor(step);
+                            current += step;
+                            //设置任意样式属性的值
+                            element.style[k] = current + "px";
+                        }
+                        if(step != 0){
+                            //有一个属性没有达到，就不停止
+                            stop = false;
+                        }
+                    }
+                    //如果所有值都达到了，就停止定时器
+                    if(stop){
+                        clearInterval(element.timerId);
+                        if(fn){
+                            fn();
+                        }
+                    }
+                },2000)
+            }
+            //获取计算样式后的值
+            function getStyle(element,attr){
+                //能力检测
+                if(window.getComputedStyle){
+                    return window.getComputedStyle(element,null)[attr];
+                }else{
+                    return element.currentStyle[attr];
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="box"></div>
+</body>
+</html>

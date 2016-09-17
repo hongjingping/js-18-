@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>隔行高亮</title>
+    <style>
+        .odd{
+            background-color: yellow;
+        }
+        .even{
+            background-color: blue;
+        }
+        .current{
+            background-color: red;
+        }
+    </style>
+    <script>
+//        onload = function(){
+//            var lis = document.getElementsByTagName("li");
+//            for(var i=0;i<lis.length;i++){
+//                if(i%2 == 0){
+//                    lis[i].style.backgroundColor = "pink";
+//                }else{
+//                    lis[i].style.backgroundColor = "yellow";
+//                }
+//            }
+//            for(var i= 0,len = lis.length;i<len;i++){
+//                var bg;
+//                lis[i].onmouseover = function(){
+//                    bg = this.style.backgroundColor;
+//                    this.style.backgroundColor = "red";
+//                };
+//                lis[i].onmouseout  = function(){
+//                    this.style.backgroundColor = bg;
+//                }
+//            }
+//        }
+
+
+        onload = function(){
+            var ping = document.getElementById("ping");
+            var lists = document.getElementsByTagName("li");
+            for(var i= 0,len=lists.length;i<len;i++){
+                if(i%2==0){
+                    lists[i].className="odd";
+                }else{
+                    lists[i].className="even";
+                }
+            }
+            for(var i= 0,len=lists.length;i<len;i++){
+                var bg;
+                lists[i].onmouseover = function(){
+                    bg = this.className;
+                    this.className = "current";
+                }
+                lists[i].onmouseout = function(){
+                    this.className = bg;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<ul id="ping">
+    <li>萍宝贝0</li>
+    <li>萍宝贝2</li>
+    <li>萍宝贝3</li>
+    <li>萍宝贝4</li>
+    <li>萍宝贝5</li>
+    <li>萍宝贝6</li>
+    <li>萍宝贝7</li>
+    <li>萍宝贝8</li>
+    <li>萍宝贝9</li>
+    <li>萍宝贝10</li>
+</ul>
+<script>
+//    var ping = document.getElementById("ping");
+//    var lists = document.getElementsByTagName("li");
+//    for(var i= 0,len=lists.length;i<len;i++){
+//        if(i%2 == 0){
+//            lists[i].className="odd";
+//        }else{
+//            lists[i].className = "even";
+//        }
+//    }
+//    for(var i= 0,len=lists.length;i<len;i++){
+//        var bg;
+//        lists[i].onmouseover = function(){
+//            bg = this.className;
+//            this.className = "current";
+//        };
+//        lists[i].onmouseout = function(){
+//            this.className = bg;
+//        }
+//    }
+</script>
+</body>
+</html>

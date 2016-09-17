@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+//        var arr = [1,2,3,4,8,6,5,4,3,34,56,23,346,12];
+//        var m=0;//轮数
+//        var n=0;//次数
+//        function bubbleSort(arr){
+//            //外环控制轮数（元素个数-1）
+//            for(var i=0;i<arr.length-1;i++){
+//                var isSort = true;
+//                //内环控制个数(元素的个数-i-1)
+//                for(var j=0;j<arr.length-1-i;j++){
+//                    if(arr[j]>arr[j+1]){
+//                        var tmp = arr[j];
+//                        arr[j] = arr[j+1];
+//                        arr[j+1] = tmp;
+//                        isSort = false;
+//                    }
+//                    n++;
+//                }
+//                m++;
+//                if(isSort){
+//                    break;
+//                }
+//            }
+//            return arr;
+//        }
+//        console.log(bubbleSort(arr));
+//        console.log(n);
+//        console.log(m);
+
+        var arr = [1,2,3,4,8,6,5,4,3,34,78,34,43,12,4576,56,23,346,12];
+        function bubbleSort(arr){
+            //外环控制轮数
+            for(var i=0;i<arr.length-1;i++){
+                var isSort = true;
+                //内环控制次数
+                for(var j=0;j<arr.length-1-i;j++){
+                    if(arr[j]>arr[j+1]){
+                        var temp = arr[j];
+                        arr[j] = arr[j+1];
+                        arr[j+1] = temp;
+                        isSort = false;
+                    }
+                }
+                if(isSort){
+                    break;
+                }
+            }
+            return arr;
+        }
+        console.log(bubbleSort(arr));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

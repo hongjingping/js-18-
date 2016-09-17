@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>显示隐藏</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+    <script>
+        /*visibility:visible/hidden;指的是显示隐藏，但是还占据位置*/
+//        onload = function(){
+//            var div = document.getElementsByTagName('div')[0];
+//            var btn = document.getElementById("btn");
+//            btn.onclick = function(){
+//                if(this.value == "隐藏"){
+//                    div.style.visibility = "hidden";
+//                    this.value = "显示"
+//                }else if(this.value=="显示"){
+//                    div.style.visibility = "visible";
+//                    this.value = "隐藏";
+//                }
+//            }
+//        }
+
+
+        onload = function(){
+            var btn = document.getElementById("btn");
+            var div = document.getElementsByTagName("div")[0];
+            btn.onclick = function(){
+                if(this.value == "隐藏"){
+                    div.style.visibility = "hidden";
+                    this.value = "显示";
+                }else if(this.value == "显示"){
+                    div.style.visibility = "visible";
+                    this.value = "隐藏";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div></div>
+<input type="button" value="隐藏" id="btn">
+<!--<script>-->
+    <!--var btn = document.getElementById("btn");-->
+    <!--var div = document.getElementsByTagName("div")[0];-->
+    <!--btn.onclick = function(){-->
+        <!--if(this.value == "隐藏"){-->
+            <!--div.style.visibility = "hidden";-->
+            <!--this.value = "显示";-->
+        <!--}else if(this.value == "显示"){-->
+            <!--div.style.visibility = "visible";-->
+            <!--this.value = "隐藏";-->
+        <!--}-->
+    <!--}-->
+<!--</script>-->
+</body>
+</html>

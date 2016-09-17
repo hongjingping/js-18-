@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        onload = function(){
+            var heads = ['姓名','手机联系方式','性别'];
+            var datas = [
+                {"name":"陈静","phone":"18221776086","gender":"女"},
+                {"name":"李进","phone":"18895395870","gender":"男"},
+                {"name":"陈礼龙","phone":'15655188303',"gender":'男'},
+                {"name":"张琪","phone":'13671856637',"gender":'女'},
+                {"name":"张琪","phone":'13671856637',"gender":'女'},
+                {"name":"程奇","phone":'18297984657',"gender":'男'},
+                {"name":"刘宇","phone":'18930678683',"gender":'男'},
+                {"name":"顾赟","phone":'13390882345',"gender":'男'},
+                {"name":"李彬","phone":'1861617757',"gender":'男'}
+            ];
+            function createTable(parentNodes,heads,datas){
+                var box = document.createElement('div');
+                parentNodes.appendChild(box);
+                var table = document.createElement('table');
+                box.appendChild(table);
+                var thead = document.createElement('thead');
+                table.appendChild(thead);
+                table.cellPadding = 0;
+                table.cellSpacing = 0;
+                table.border ='1px';
+                table.style.width = "300px";
+                table.style.height = "400px";
+                //表头行
+                var tr = document.createElement("tr");
+                thead.appendChild(tr);
+                tr.style.textAlign = 'center';
+                //表头列
+                for(var i=0;i<heads.length;i++){
+                    var th = document.createElement('th');
+                    tr.appendChild(th);
+                    th.innerText = heads[i];
+                    th.style.height = '50px';
+                }
+                createTbody(table,datas)
+            }
+           function createTbody(table,datas){
+               //表体
+               var tbody = document.createElement('tbody');
+               table.appendChild(tbody);
+               //表体行
+               for(var i=0;i<datas.length;i++){
+                   var tr = document.createElement('tr');
+                   tbody.appendChild(tr);
+                   tbody.style.textAlign = "center";
+                   //表体列
+                   for(var k in datas[i]){
+                       var td = document.createElement('td');
+                       tr.appendChild(td);
+                       td.innerText = datas[i][k];
+                   }
+               }
+           }
+            createTable(document.body,heads,datas)
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>
